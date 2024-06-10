@@ -1,0 +1,88 @@
+{% include 'student_header.html' %}
+
+
+      <!-- main-slider -->
+      <section class="w3l-main-slider" id="home">
+        <div class="companies20-content">
+            <div class="owl-one owl-carousel owl-theme">
+                
+             
+                <div class="item">
+                    <li>
+                        <div class="slider-info banner-view banner-top2 bg bg2">
+                            <div class="banner-info">
+                                <div class="container">
+                                    <div class="banner-info-bg">
+                                      
+                                        <form method="post">
+                                            <h5>Send Complaint To : {{ data['view_manager'][0]['manager_name'] }}</h5>
+                                            <table class="table" style="width: 500px;color : #fff">
+                                                
+                                                <tr>
+                                                    <th>Complaint</th>
+                                                    <td><textarea name="cmp" id="" required  class="form-control" cols="30" rows="6"></textarea></td>
+                                                </tr>
+                                              
+                                                <tr>
+                                                    <td><input type="submit" name="comp" value="Send" id="" class="btn btn-success"></td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+               
+            </div>
+            
+
+        </div>
+    </section>
+    <!-- /main-slider -->
+    <!-- //banner section -->
+
+
+ <!-- /content-1-->
+ <div class="content-1 py-5">
+    <div class="container py-md-5">
+        <div class="row content-1-grids">
+            <div class="col-lg-12 content-1-left forms-25-info">
+                <div class="header-title">
+                    <span class="sub-title"></span>
+                    <h3 class="hny-title"> View Complaints</h3>
+
+
+    
+<table class="table" style="width: 800px;">
+    <tr>
+        <th>Complaint</th>
+        <th>Reply</th>
+        <th>Date</th>
+
+    </tr>
+    {% for row in data['view_complaints'] %}
+    <tr>
+        <td>{{ row['complaint'] }}</td>
+        <td>{{ row['reply'] }}</td>
+        <td>{{ row['date'] }}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+<!-- //content-1-->
+
+{% include 'footer.html' %}

@@ -1,0 +1,83 @@
+{% include 'manager_header.html' %}
+
+
+
+<div  style="background-image: url(/static/assets/images/banner1.jpg); height: 300px;width: 100%;">
+    <div class="banner-info-bg" style="padding-top: 7em;padding-left: 10em;">
+        <h2 style="color: #fff;">A Great Place for Learning</h2>
+        <p class="mt-4 pr-lg-4" style="color: #fff;">Choose from over 100,000 online video courses with new
+            additions published every month</p>
+       
+    </div>
+
+</div>
+
+
+ <!-- /content-1-->
+ <div class="content-1 py-5">
+    <div class="container py-md-5">
+        <div class="row content-1-grids">
+            <div class="col-lg-12 content-1-left forms-25-info">
+                <div class="header-title">
+                    <span class="sub-title"></span>
+                    
+
+    <form method="post">
+     
+        {% if data['view_assigned'] %}
+
+        
+    <h3 class="hny-title"> View Assigned Course Details</h3>
+    <table class="table" style="width: 800px;">
+        <tr>
+            <th>Course Name</th>
+            <th>Rate</th>
+            <th>Duration (Hours)</th>
+            <th>Assigned Date</th>
+        </tr>
+       {% for row in data['view_assigned'] %}
+        <tr>
+            <td>{{ row['course'] }}</td>
+            <td>{{ row['rate'] }}</td>
+            <td>{{ row['duration'] }}</td>
+            <td>{{ row['date'] }}</td>
+            <td><a href="?action=remove&assigncourse_id={{ row['assigncourse_id'] }}&tutor_id={{ data['tutor_id'] }}" class="btn btn-danger btn-sm">Remove</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    {% else %}
+
+        <h3 class="hny-title"> Assign Course</h3>
+        <table class="table" style="width: 500px;">
+            <tr>
+                <th>Course Name</th>
+                <td><select name="course_id" id="" class="form-control">
+                    {% for row in data['view_course'] %}
+                        <option value="{{ row['course_id'] }}">{{ row['course'] }}</option>
+                    {% endfor %}
+                </select></td>
+            </tr>
+           
+            <tr>
+                <td><input type="submit" name="assign" value="Assign" id="" class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+
+    {% endif %}
+
+
+
+    
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+<!-- //content-1-->
+
+{% include 'footer.html' %}

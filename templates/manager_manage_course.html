@@ -1,0 +1,102 @@
+{% include 'manager_header.html' %}
+
+<!-- main-slider -->
+<section class="w3l-main-slider" id="home">
+    <div class="companies20-content">
+        <div class="owl-one owl-carousel owl-theme">
+         
+        
+            <div class="item">
+                <li>
+                    <div class="slider-info banner-view banner-top2 bg bg2">
+                        <div class="banner-info">
+                            <div class="container">
+                                <div class="banner-info-bg">
+                                   
+                                    <form method="post">
+                                        {% if data['edit_course'] %}
+                                        <h5>Edit Course</h5>
+                                        {% else %}
+                                        <h5>Add Course</h5>
+                                        {% endif %}
+                                        <table class="table" style="width: 500px; color: #fff">
+                                            <tr>
+                                                <th>Course Name</th>
+                                                <td><input type="text" name="coursename" required class="form-control" id="" value="{% if data['edit_course'] %} {{ data['edit_course'][0]['course'] }} {% endif %}"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Rate</th>
+                                                <td><input type="text" name="rate" id="" required  class="form-control" value="{% if data['edit_course'] %} {{ data['edit_course'][0]['rate'] }} {% endif %}"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Duration (Hours)</th>
+                                                <td><input type="text" name="duration" required  id="" class="form-control" value="{% if data['edit_course'] %} {{ data['edit_course'][0]['duration'] }} {% endif %}"></td>
+                                            </tr>
+                                          
+                                            <tr>
+                                                {% if data['edit_course'] %}
+                                                    <td><input type="submit" name="editcourse" value="UPDATE" id="" class="btn btn-warning"></td>
+                                                {% else %}
+                                                    <td><input type="submit" name="addcourse" value="ADD" id="" class="btn btn-success"></td>
+                                                {% endif %}
+                                               
+                                            </tr>
+                                        </table>
+                                    </form>
+                                
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>
+         
+        </div>
+   
+
+    </div>
+</section>
+<!-- /main-slider -->
+<!-- //banner section -->
+
+
+ <!-- /content-1-->
+ <div class="content-1 py-5">
+    <div class="container py-md-5">
+        <div class="row content-1-grids">
+            <div class="col-lg-12 content-1-left forms-25-info">
+                <div class="header-title">
+                    <span class="sub-title"></span>
+                    <h3 class="hny-title">View Course Details</h3>
+
+
+    <table class="table" style="width: 800px;">
+        <tr>
+            <th>Course Name</th>
+            <th>Rate</th>
+            <th>Duration (Hours)</th>
+        </tr>
+        {% for row in data['view_course'] %}
+        <tr>
+            <td>{{ row['course'] }}</td>
+            <td>{{ row['rate'] }}</td>
+            <td>{{ row['duration'] }}</td>
+            <td><a href="manager_manage_syllabus?course_id={{ row['course_id'] }}&duration={{ row['duration'] }}" class="btn btn-info btn-sm">Syllabus</a></td>
+            <td><a href="?action=edit&course_id={{ row['course_id'] }}" class="btn btn-warning btn-sm">Edit</a></td>
+            <td><a href="?action=remove&course_id={{ row['course_id'] }}" class="btn btn-danger btn-sm">Remove</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+<!-- //content-1-->
+
+{% include 'footer.html' %}

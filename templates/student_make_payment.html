@@ -1,0 +1,77 @@
+
+{% include 'student_header.html' %}
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background-image: url(assets/img/bb3.jpg)">
+    <div class="hero-container" data-aos="fade-in">
+      <p>PAYMENT   <span class="typed" data-typed-items=" DETAILS"></span></p>
+
+
+
+    <center>
+
+
+        <style type="text/css">
+        td{background-color: transparent;font-weight: 2px;color: black}
+        hr{border-color: orange}
+        #b {
+            border: 1px solid grey; 
+            padding: 10px;
+        }
+    </style>
+
+
+    <div align="center">
+
+        <form method="post">
+        
+            <table style="width: 400px;" class="table table-borderless" id="b"> 
+                <tr> 
+                    <td>PAYMENT DETAILS</td> 
+                    <td><img src="image/ccard.jpg" style="width:100%"/></td>
+
+                </tr>
+                <tr> 
+                    <td colspan="2"> <small>CARD NUMBER</small><br> 
+                        <input type="text" placeholder="Enter a valid card number"  required  class="form-control"  pattern="[0-9]{16}" title="Enter 16 digit Card number">
+                    </td> 
+                </tr>
+                <tr> 
+
+                    <td > <small>CVV</small><br> 
+                        <input type="password" placeholder="CVV"  class="form-control" required   pattern="[0-9]{3}" title="Enter 3 digit CV number">
+                    </td> 
+                    <td> <small>EXPIRATION DATE</small><br> 
+                        <input type="text" placeholder="MM/YY"  class="form-control"  required  pattern="[0-9,/]{5}" title="Enter 3 digit CV number"> 
+                    </td>
+
+
+                </tr>
+                <tr> 
+                    <td colspan="2"> <small>CARD HOLDER</small><br> 
+                        <input type="text" placeholder="Name on card"  required  class="form-control" data-valid='only-text'  > </td>
+                    </tr>
+                    
+                            <tr><td colspan="2"> <small>AMOUNT</small><br>
+                             <input type="text" name="b_amount" placeholder="Amount"  required   readonly="" value="{{ data['amount'] }}"></td></tr>
+                             <tr> 
+                            <td colspan="2"> 
+                                <input type="submit" value="PAY"  class="btn btn-success" style="width: 100%" name="pay"> </td>
+                            </tr>
+                   
+
+
+                    </div>
+                    
+                </form>
+                <hr> 
+            </center>
+
+            </div>
+        
+  </section><!-- End Hero -->
+
+  <main id="main">
+      
+
+    {% include 'footer.html' %}

@@ -1,0 +1,98 @@
+{% include 'student_header.html' %}
+
+
+      <!-- main-slider -->
+      <section class="w3l-main-slider" id="home">
+        <div class="companies20-content">
+            <div class="owl-one owl-carousel owl-theme">
+                
+             
+                <div class="item">
+                    <li>
+                        <div class="slider-info banner-view banner-top2 bg bg2">
+                            <div class="banner-info">
+                                <div class="container">
+                                    <div class="banner-info-bg">
+
+
+    <form method="post">
+        <h5>Rate App</h5>
+        <table class="table" style="width: 500px; color : #fff">
+            
+            <tr>
+                <th>Rate Out Of 5</th>
+                <td><select name="rate" id="" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><textarea name="desp" class="form-control"  required  id="" cols="25" rows="7"></textarea></td>
+            </tr>
+          
+            <tr>
+                <td><input type="submit" name="rate_app" value="Rate App" id="" class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+
+
+    
+</div>
+</div>
+</div>
+</div>
+</li>
+</div>
+
+</div>
+
+
+</div>
+</section>
+<!-- /main-slider -->
+<!-- //banner section -->
+
+
+<!-- /content-1-->
+<div class="content-1 py-5">
+<div class="container py-md-5">
+<div class="row content-1-grids">
+<div class="col-lg-12 content-1-left forms-25-info">
+<div class="header-title">
+<span class="sub-title"></span>
+<h3 class="hny-title"> View My Rating</h3>
+
+
+<table class="table" style="width: 500px;">
+    <tr>
+        <th>Rate</th>
+        <th>Details</th>
+        <th>Date</th>
+
+    </tr>
+    {% for row in data['view_ratings'] %}
+    <tr>
+        <td>{{ row['rated'] }}</td>
+        <td>{{ row['details'] }}</td>
+        <td>{{ row['date'] }}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+<!-- //content-1-->
+
+{% include 'footer.html' %}

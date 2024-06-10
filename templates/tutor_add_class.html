@@ -1,0 +1,88 @@
+{% include 'tutor_header.html' %}
+
+
+      <!-- main-slider -->
+      <section class="w3l-main-slider" id="home">
+        <div class="companies20-content">
+            <div class="owl-one owl-carousel owl-theme">
+                
+             
+                <div class="item">
+                    <li>
+                        <div class="slider-info banner-view banner-top2 bg bg2">
+                            <div class="banner-info">
+                                <div class="container">
+                                    <div class="banner-info-bg">
+
+
+    <form method="post" enctype="multipart/form-data">
+        <h5>Add Class</h5>
+        <table class="table" style="width: 500px; color : #fff">
+            <tr>
+                <th>Class File</th>
+                <td><input type="file" class="form-control" required  name="video" id=""></td>
+            </tr>
+            <tr>
+                <th>Video Details</th>
+                <td><textarea name="details" id="" class="form-control" required  cols="25" rows="7"></textarea></td>
+            </tr>
+          
+            <tr>
+                <td><input type="submit" name="class_video" value="ADD" id="" class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+
+    
+</div>
+</div>
+</div>
+</div>
+</li>
+</div>
+
+</div>
+
+
+</div>
+</section>
+<!-- /main-slider -->
+<!-- //banner section -->
+
+
+
+  <!--/courses-->
+  <div class="w3l-homeblog py-5" id="homeblog">
+    <div class="container py-lg-5 py-md-4">
+        <div class="header-title mb-3">
+            <span class="sub-title"></span>
+            <h3 class="hny-title text-left"> View Class Videos</h3>
+        </div>
+        <div class="row top-pics ">
+
+            {% for row in data['view_class'] %}
+
+            <div class="col-lg-4 col-md-6 mt-5">
+                <div class="card">
+                    <div>
+                        <video width="320" height="240" controls >
+                            <source src="/{{ row['videos'] }}" type="video/mp4">
+                          </video>
+                    </div>
+                    <div>
+                        {{ row['videodetails'] }}
+                    </div>
+                    <div>
+                        {{ row['date'] }}
+                    </div>
+                  
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+    </div>
+</div>
+<!--//courses-->
+
+{% include 'footer.html' %}

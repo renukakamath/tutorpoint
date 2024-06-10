@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.tutor_point">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/images"
+        android:label="Tutor Point"
+        android:roundIcon="@drawable/images"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Tutor_point"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".Vieworders"
+            android:exported="false" />
+        <activity
+            android:name=".Addtocart"
+            android:exported="false" />
+        <activity
+            android:name=".Updateprofile"
+            android:exported="false" />
+        <activity
+            android:name=".VideoPlay"
+            android:exported="false" />
+        <activity
+            android:name=".Videos"
+            android:exported="false" />
+        <activity
+            android:name=".Makepayment"
+            android:exported="false" />
+        <activity
+            android:name=".Sendcomplaints"
+            android:exported="false" />
+        <activity
+            android:name=".viewclass"
+            android:exported="false" />
+        <activity
+            android:name=".Viewtutordetails"
+            android:exported="false" />
+        <activity
+            android:name=".Viewsyllabus"
+            android:exported="false" />
+        <activity
+            android:name=".Rating"
+            android:exported="false" />
+        <activity
+            android:name=".viewrequest"
+            android:exported="false" />
+        <activity
+            android:name=".viewcourse"
+            android:exported="false" />
+        <activity
+            android:name=".Userhome"
+            android:exported="false" />
+        <activity
+            android:name=".Registration"
+            android:exported="false" />
+        <activity
+            android:name=".Ipsettings"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/homepage"
+    android:orientation="vertical"
+    tools:context=".viewclass">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View category"
+        android:textColor="#FDFCFC"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="163dp" />
+
+    <GridView
+        android:id="@+id/ltvideo"
+        android:layout_width="match_parent"
+        android:layout_height="547dp"
+        android:textStyle="bold"
+        android:numColumns="2"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+
+    </LinearLayout>
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/yellow"
+
+        app:fabCradleMargin="20dp"
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:fabCradleVerticalOffset="10dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomview"
+            app:elevation="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:background="@color/yellow"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/bottom_nav_menu"
+
+            android:outlineSpotShadowColor="@color/yellow"
+            >
+
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

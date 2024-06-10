@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/homepage"
+    android:orientation="vertical"
+    tools:context=".viewcourse">
+
+
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:drawableLeft="@drawable/search"
+        android:drawablePadding="10dp"
+        android:layout_marginHorizontal="18dp"
+        android:background="@drawable/square"
+        android:padding="15dp"
+        android:textColor="@color/yellow"
+        android:textColorHint="#0E0E0E"
+        android:inputType="textPersonName"
+        android:hint="course" />
+
+
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="409dp"
+        android:layout_height="547dp"
+
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+{% include 'tutor_header.html' %}
+
+
+      <!-- main-slider -->
+      <section class="w3l-main-slider" id="home">
+        <div class="companies20-content">
+            <div class="owl-one owl-carousel owl-theme">
+                
+             
+                <div class="item">
+                    <li>
+                        <div class="slider-info banner-view banner-top2 bg bg2">
+                            <div class="banner-info">
+                                <div class="container">
+                                    <div class="banner-info-bg">
+                                      
+
+
+    <form method="post">
+        <h5>My Profile</h5>
+        <table class="table" style="width: 500px; color : #fff">
+            <tr>
+                <th>First Name</th>
+                <td><input type="text" name="fname" id="" class="form-control" value="{{ data['my_profile'][0]['firstname'] }}"></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td><input type="text" name="lname" id="" class="form-control" value="{{ data['my_profile'][0]['lastname'] }}"></td>
+            </tr>
+            <tr>
+                <th>Place</th>
+                <td><input type="text" name="place" id="" class="form-control" value="{{ data['my_profile'][0]['place'] }}"></td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td><input type="text" name="phone" id="" class="form-control" value="{{ data['my_profile'][0]['phone'] }}"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" id="" class="form-control" value="{{ data['my_profile'][0]['email'] }}"></td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td><input type="text" name="uname" id="" class="form-control" value="{{ data['my_profile'][0]['username'] }}"></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input type="text" name="passw" id="" class="form-control" value="{{ data['my_profile'][0]['password'] }}"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="updateprofile" value="Update" id="" class="btn btn-warning"></td>
+            </tr>
+        </table>
+    </form>
+
+
+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+               
+            </div>
+            
+
+        </div>
+    </section>
+    <!-- /main-slider -->
+    <!-- //banner section -->
+
+
+{% include 'footer.html' %}

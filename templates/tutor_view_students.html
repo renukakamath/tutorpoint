@@ -1,0 +1,52 @@
+{% include 'tutor_header.html' %}
+
+<div  style="background-image: url(/static/assets/images/banner1.jpg); height: 300px;width: 100%;">
+    <div class="banner-info-bg" style="padding-top: 7em;padding-left: 10em;">
+        <h2 style="color: #fff;">A Great Place for Learning</h2>
+        <p class="mt-4 pr-lg-4" style="color: #fff;">Choose from over 100,000 online video courses with new
+            additions published every month</p>
+       
+    </div>
+
+</div>
+
+  <!--/courses-->
+  <div class="w3l-homeblog py-5" id="homeblog">
+    <div class="container py-lg-5 py-md-4">
+        <div class="header-title mb-3">
+            <span class="sub-title"></span>
+            <h3 class="hny-title text-left"> Student Details</h3>
+        </div>
+        <div class="row top-pics ">
+
+
+
+<table class="table" style="width: 900px;">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Place</th>
+        <th>Phone</th>
+        <th>Email</th>
+
+    </tr>
+    {% for row in data['view_students'] %}
+    <tr>
+        <td>{{ row['firstname'] }}</td>
+        <td>{{ row['lastname'] }}</td>
+        <td>{{ row['place'] }}</td>
+        <td>{{ row['phone'] }}</td>
+        <td>{{ row['email'] }}</td>
+       
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+</div>
+</div>
+</div>
+<!--//courses-->
+
+{% include 'footer.html' %}

@@ -1,0 +1,20 @@
+{% include 'public_header.html' %}
+
+<h1>Syllabus Details</h1>
+<table>
+    <tr>
+        <th>Syllabus</th>
+        <th>Time Taken (Hours)</th>
+
+    </tr>
+    {% for row in data['view_syllabus'] %}
+    <tr>
+        <td>{{ row['syllabus'] }}</td>
+        <td>{{ row['timetaken'] }}</td>
+       
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% include 'footer.html' %}

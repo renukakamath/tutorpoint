@@ -1,0 +1,54 @@
+{% include 'admin_header.html' %}
+
+
+<div  style="background-image: url(/static/assets/images/banner1.jpg); height: 300px;width: 100%;">
+    <div class="banner-info-bg" style="padding-top: 7em;padding-left: 10em;">
+        <h2 style="color: #fff;">A Great Place for Learning</h2>
+        <p class="mt-4 pr-lg-4" style="color: #fff;">Choose from over 100,000 online video courses with new
+            additions published every month</p>
+       
+    </div>
+
+</div>
+
+
+ <!-- /content-1-->
+ <div class="content-1 py-5">
+    <div class="container py-md-5">
+        <div class="row content-1-grids">
+            <div class="col-lg-12 content-1-left forms-25-info">
+                <div class="header-title">
+                    <span class="sub-title"></span>
+                    <h3 class="hny-title"> Course Details</h3>
+
+<table class="table" style="width: 900px;">
+    <tr>
+        <th>Course Name</th>
+        <th>Rate</th>
+        <th>Duration</th>
+
+    </tr>
+    {% for row in data['view_course'] %}
+    <tr>
+        <td>{{ row['course'] }}</td>
+        <td>{{ row['rate'] }}</td>
+        <td>{{ row['duration'] }}</td>
+       <td><a href="admin_view_syllabus?course_id={{ row['course_id'] }}" class="btn btn-success btn-sm">View Syllabus</a></td>
+       <td><a href="admin_view_videos?course_id={{ row['course_id'] }}" class="btn btn-primary btn-sm">View Videos</a></td>
+       <td><a href="admin_view_students?course_id={{ row['course_id'] }}" class="btn btn-info btn-sm">View Students</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+<!-- //content-1-->
+
+{% include 'footer.html' %}

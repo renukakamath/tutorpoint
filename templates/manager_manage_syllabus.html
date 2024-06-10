@@ -1,0 +1,103 @@
+{% include 'manager_header.html' %}
+
+
+<!-- main-slider -->
+<section class="w3l-main-slider" id="home">
+    <div class="companies20-content">
+        <div class="owl-one owl-carousel owl-theme">
+         
+        
+            <div class="item">
+                <li>
+                    <div class="slider-info banner-view banner-top2 bg bg2">
+                        <div class="banner-info">
+                            <div class="container">
+                                <div class="banner-info-bg">
+
+    <form method="post">
+       
+        <h5>Manage Syllabus</h5>
+    
+        <table class="table" style="width: 500px; color : #fff">
+            <tr>
+                <th>Course Duration  (Hours)</th>
+                <td><input type="text" name="duration" required  class="form-control" readonly id="duration" value="{{ data['duration'] }}"></td>
+            </tr>
+            <tr>
+                <th>Balance Time (Hours)</th>
+                <td><input type="text" name="btime" id="btime" required  class="form-control" readonly value="{{ data['btime'] }} "></td>
+            </tr>
+            <tr>
+                <th>Syllabus</th>
+                <td><textarea name="syllabus" id="" cols="30"  required class="form-control" rows="6"> {% if data['edit_syllabus'] %} {{ data['edit_syllabus'][0]['syllabus'] }} {% endif %}</textarea></td>
+            </tr>
+            
+            <tr>
+                <th>Time Taken (Hours)</th>
+                <td><input type="text" name="timetaken" id="timetaken"  required class="form-control" value="{% if data['edit_syllabus'] %} {{ data['edit_syllabus'][0]['timetaken'] }} {% endif %}"></td>
+            </tr>
+          
+            <tr>
+                {% if data['edit_syllabus'] %}
+                    <td><input type="submit" name="editsyllabus" value="UPDATE" id="" class="btn btn-warning"></td>
+                {% else %}
+                    <td><input type="submit" name="addsyllabus" value="ADD" id="" class="btn btn-success"></td>
+                {% endif %}
+               
+            </tr>
+        </table>
+    </form>
+
+
+          
+</div>
+</div>
+</div>
+</div>
+</li>
+</div>
+
+</div>
+
+
+</div>
+</section>
+<!-- /main-slider -->
+<!-- //banner section -->
+
+
+<!-- /content-1-->
+<div class="content-1 py-5">
+<div class="container py-md-5">
+<div class="row content-1-grids">
+<div class="col-lg-12 content-1-left forms-25-info">
+<div class="header-title">
+<span class="sub-title"></span>
+<h3 class="hny-title">View Syllabus Details</h3>
+
+    <table class="table" style="width: 800px;"> 
+        <tr>
+            <th>Syllabus</th>
+            <th>Time Taken (Hours)</th>
+        </tr>
+        {% for row in data['view_syllabus'] %}
+        <tr>
+            <td>{{ row['syllabus'] }}</td>
+            <td>{{ row['timetaken'] }}</td>
+            <td><a href="?action=edit&syllabus_id={{ row['syllabus_id'] }}&course_id={{ data['course_id'] }}&duration={{ data['duration'] }}" class="btn btn-warning btn-sm">Edit</a></td>
+            <td><a href="?action=remove&syllabus_id={{ row['syllabus_id'] }}&course_id={{ data['course_id'] }}&duration={{ data['duration'] }}"  class="btn btn-danger btn-sm">Remove</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+<!-- //content-1-->
+
+{% include 'footer.html' %}
